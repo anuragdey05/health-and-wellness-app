@@ -108,6 +108,13 @@ export function SessionFlow({
     poseRef.current = null;
   }, []);
 
+  const advanceToBreathing = useCallback(() => {
+    stopCamera();
+    setCameraLive(false);
+    setSeconds(deskReset.steps[2].durationSeconds ?? 60);
+    setScreen("breathe");
+  }, [stopCamera]);
+
   useEffect(() => stopCamera, [stopCamera]);
 
   useEffect(() => {
@@ -151,6 +158,13 @@ export function SessionFlow({
   useEffect(() => {
     if (screen !== "squats") stopCamera();
   }, [screen, stopCamera]);
+
+  useEffect(() => {
+    if (screen !== "squats" || reps < (deskReset.steps[1].targetReps ?? 8)) return;
+
+    const timer = window.setTimeout(advanceToBreathing, reducedMotion ? 0 : 900);
+    return () => window.clearTimeout(timer);
+  }, [advanceToBreathing, reducedMotion, reps, screen]);
 
   const celebrateRep = useCallback(() => {
     if (!repRef.current || reducedMotion) return;
@@ -384,8 +398,8 @@ export function SessionFlow({
                 <button className="add-rep-button" onClick={() => manualRep(1)} disabled={reps >= 8}><PlusIcon aria-hidden size={19} weight="bold" />Add rep</button>
               </div>
             </div>
-            <button className="primary-button wide" onClick={() => { setCameraLive(false); setSeconds(60); setScreen("breathe"); }} disabled={reps < 1}>
-              {reps >= 8 ? "Finish with breathing" : `Continue with ${reps} ${reps === 1 ? "rep" : "reps"}`}
+            <button className="primary-button wide" onClick={advanceToBreathing} disabled={reps < 1}>
+              {reps >= 8 ? "All 8 done — continue to breathing" : `Continue with ${reps} ${reps === 1 ? "rep" : "reps"}`}
             </button>
           </div>
         ) : null}
