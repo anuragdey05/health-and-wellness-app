@@ -1,0 +1,21 @@
+.env.example
+  s_bd04b6d4d0ab46::t_71e53f85b2d5f1 7-11
+lib/auth.ts
+  s_bd04b6d4d0ab46::t_71e53f85b2d5f1 4-6,14-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c3458271e7a8338fdfe763a085b20c2abddde66f",
+  "prompts": {},
+  "sessions": {
+    "s_bd04b6d4d0ab46": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a10097-6a22-7cd1-b9d3-8785c2fe9a05",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Anurag Dey <anuragdey2k@gmail.com>"
+    }
+  }
+}
