@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-03T08:18:42Z",
+  "title": "Design System: Between",
+  "extensions": {
+    "colorMeta": {
+      "action-coral": { "role": "primary", "displayName": "Action Coral", "canonical": "#f16d56", "tonalRamp": ["#35140f", "#5d2118", "#913829", "#c55340", "#f16d56", "#f69c8c", "#facbc3", "#fff3f0"] },
+      "light-canvas": { "role": "neutral", "displayName": "Mineral Canvas", "canonical": "#f3f4ef", "tonalRamp": ["#1a1c18", "#343730", "#55594f", "#7a8073", "#a5aa9e", "#cdd0c8", "#e8eae4", "#f8f9f5"] },
+      "dark-canvas": { "role": "neutral", "displayName": "Forest Canvas", "canonical": "#101613", "tonalRamp": ["#0c100e", "#17201b", "#27342c", "#3f5146", "#63776a", "#91a096", "#c2cbc4", "#eff3ed"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Home promise only." },
+      "headline": { "displayName": "Session Headline", "purpose": "One focused stage at a time." },
+      "body": { "displayName": "Guidance", "purpose": "Instructions and supportive copy." }
+    },
+    "shadows": [{ "name": "workspace-ambient", "value": "0 24px 70px rgba(46, 67, 54, 0.13)", "purpose": "The active orbit or camera workspace only." }],
+    "motion": [
+      { "name": "state-fast", "value": "180ms ease", "purpose": "Hover, active, and compact state transitions." },
+      { "name": "stage-enter", "value": "420ms out(4)", "purpose": "Anime.js session-stage transition." },
+      { "name": "breath-cycle", "value": "8000ms inOutSine", "purpose": "Guided breathing scale loop, removed for reduced motion." }
+    ],
+    "breakpoints": [{ "name": "stack", "value": "900px" }, { "name": "mobile", "value": "620px" }]
+  },
+  "components": [
+    {
+      "name": "Primary Button", "kind": "button", "refersTo": "button-primary", "description": "The single forward action in a stage.",
+      "html": "<button class=\"ds-btn-primary\">TRY DESK RESET</button>",
+      "css": ".ds-btn-primary { min-height: 50px; border: 0; border-radius: 999px; padding: 0 22px; background: var(--accent, #f16d56); color: var(--accent-ink, #28130e); font: 780 16px 'Manrope Variable', sans-serif; transition: transform 180ms ease, background 180ms ease; } .ds-btn-primary:hover { background: var(--accent-strong, #db5944); } .ds-btn-primary:active { transform: translateY(1px) scale(.985); } .ds-btn-primary:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent, #f16d56) 72%, transparent); outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Button", "kind": "button", "description": "A quieter completion or skip action.",
+      "html": "<button class=\"ds-btn-secondary\">COMPLETE BREATHING</button>",
+      "css": ".ds-btn-secondary { min-height: 50px; border: 1px solid var(--line, #cbd5cd); border-radius: 999px; padding: 0 22px; background: var(--surface, #fafbf7); color: var(--ink, #17221c); font: 780 16px 'Manrope Variable', sans-serif; transition: transform 180ms ease, background 180ms ease; } .ds-btn-secondary:hover { background: var(--surface-raised, #e9eee8); } .ds-btn-secondary:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent, #f16d56) 72%, transparent); outline-offset: 3px; }"
+    },
+    {
+      "name": "Orbit Panel", "kind": "custom", "refersTo": "panel", "description": "The elevated home workspace that turns free time into an action.",
+      "html": "<section class=\"ds-panel\"><h2>Your day has room.</h2><p>Next opening: 9:23 AM</p></section>",
+      "css": ".ds-panel { border-radius: 16px; padding: 28px; background: var(--surface, #fafbf7); color: var(--ink, #17221c); box-shadow: 0 24px 70px rgba(46, 67, 54, .13); font-family: 'Manrope Variable', sans-serif; } .ds-panel h2 { margin: 0; font-size: 17px; letter-spacing: -.02em; } .ds-panel p { margin: 8px 0 0; color: var(--muted, #5e6b63); }"
+    },
+    {
+      "name": "Energy Choice", "kind": "button", "description": "A large, accessible pre-session energy selection.",
+      "html": "<button class=\"ds-energy\"><small>02</small><strong>Steady</strong><span>Ready to move</span></button>",
+      "css": ".ds-energy { min-height: 180px; padding: 24px; border: 1px solid var(--line, #cbd5cd); border-radius: 16px; background: var(--surface, #fafbf7); color: var(--ink, #17221c); text-align: left; display: flex; flex-direction: column; font-family: 'Manrope Variable', sans-serif; transition: transform 180ms ease, border-color 180ms ease, background 180ms ease; } .ds-energy strong { margin-top: auto; font-size: 24px; } .ds-energy span { color: var(--muted, #5e6b63); } .ds-energy:hover { transform: translateY(-3px); border-color: var(--accent, #f16d56); } .ds-energy:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent, #f16d56) 72%, transparent); outline-offset: 3px; }"
+    },
+    {
+      "name": "Session Result", "kind": "custom", "description": "A sparse three-part completion summary with tabular numerals.",
+      "html": "<div class=\"ds-result\"><strong>8</strong><span>chair squats</span></div>",
+      "css": ".ds-result { padding: 24px 12px; border-top: 1px solid var(--line, #cbd5cd); border-bottom: 1px solid var(--line, #cbd5cd); display: flex; flex-direction: column; align-items: center; gap: 5px; font-family: 'Manrope Variable', sans-serif; } .ds-result strong { font-size: 24px; font-variant-numeric: tabular-nums; letter-spacing: -.03em; } .ds-result span { color: var(--muted, #5e6b63); font-size: 12px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Available Orbit",
+    "overview": "Between is a calm, operate-first wellness product. Open time becomes a visible material through orbital markers, one coral movement window, and a seven-day loop.",
+    "keyCharacteristics": ["Cool mineral surfaces with one coral action voice.", "Circular geometry reserved for time, completion, and compact controls.", "Strong asymmetric composition on wide screens and strict single-column structure on mobile.", "Motion used only to explain state, progress, breath, or feedback."],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "Coral is the only action accent. It never competes with a second decorative hue.", "section": "colors" },
+      { "name": "The Theme Parity Rule", "body": "The same hierarchy and interaction contrast must hold in both system themes.", "section": "colors" },
+      { "name": "The One Family Rule", "body": "Weight, scale, and color create hierarchy; additional display families do not.", "section": "typography" },
+      { "name": "The One Lift Rule", "body": "Elevation identifies the current workspace, never every container.", "section": "elevation" }
+    ],
+    "dos": ["Do keep guest mode complete and integrations visibly optional.", "Do use circles for time, progress, completion, and compact controls.", "Do preserve keyboard focus, reduced motion, system dark mode, and camera-free completion.", "Do let motion explain a change in state."],
+    "donts": ["Don't introduce calorie, diagnosis, injury-correction, or body-shaming language.", "Don't add a second accent color or decorative glow.", "Don't wrap routine metadata in nested cards.", "Don't persist camera frames, pose landmarks, or joint angles."]
+  }
+}
