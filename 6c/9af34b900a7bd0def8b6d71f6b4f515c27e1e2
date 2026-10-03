@@ -1,0 +1,19 @@
+components/session-flow.tsx
+  s_bd04b6d4d0ab46::t_f764988bcc3d17 111-117,162-168,401-402
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6c9af34b900a7bd0def8b6d71f6b4f515c27e1e2",
+  "prompts": {},
+  "sessions": {
+    "s_bd04b6d4d0ab46": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a10097-6a22-7cd1-b9d3-8785c2fe9a05",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Anurag Dey <anuragdey2k@gmail.com>"
+    }
+  }
+}
